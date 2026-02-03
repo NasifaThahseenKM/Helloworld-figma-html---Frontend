@@ -1,0 +1,1600 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Nunito', sans-serif;
+  background: #FFFFFF;
+  color: #000000;
+  line-height: 1;
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+
+:root {
+  --pattern-size: 120px;
+  --circle-radius: 60px;
+}
+
+.main-wrapper {
+  width: 100%;
+  max-width: 1920px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 42px 118px;
+  z-index: 10;
+  gap: 100px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-shrink: 0;
+}
+
+.logo-icon {
+  position: relative;
+  width: 48px;
+  height: 48px;
+}
+
+.logo-icon::before {
+  content: '';
+  position: absolute;
+  top: -6px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 10px;
+  height: 10px;
+  background: #FF9257;
+  border-radius: 50%;
+  z-index: 3;
+}
+
+.logo-icon .book {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40px;
+  height: 26px;
+  background: #2F584E;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+}
+
+.logo-icon .book::before,
+.logo-icon .book::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  width: 50%;
+  height: 100%;
+  background: #2F584E;
+}
+
+.logo-icon .book::before {
+  left: -4px;
+  border-radius: 4px 0 0 4px;
+  transform: skewY(-6deg);
+}
+
+.logo-icon .book::after {
+  right: -4px;
+  border-radius: 0 4px 4px 0;
+  transform: skewY(6deg);
+}
+
+.logo-icon .star {
+  position: relative;
+  color: #ffffff;
+  font-size: 14px;
+  line-height: 1;
+  z-index: 4;
+}
+
+.logo-text {
+  font-family: 'Nunito';
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 32px;
+  letter-spacing: -0.01em;
+  color: #1A1A1A;
+}
+
+.nav {
+  display: flex;
+  gap: 84px;
+  margin-left: 0;
+}
+
+.nav-item {
+  font-family: 'ABeeZee', sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 24px;
+  color: #838383;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.nav-item:hover {
+  color: #FF9257;
+}
+
+.main-layout {
+  display: flex;
+  min-height: 100vh;
+}
+
+.left-content {
+  width: 62%;
+  position: relative;
+  background: #FFFFFF;
+  padding-top: 164px;
+}
+
+.right-images {
+  width: 38%;
+  background: #f5f9ff;
+  position: relative;
+  overflow: hidden;
+  min-height: 100vh;
+  background-image:
+    radial-gradient(circle at 50% 0%, transparent calc(var(--circle-radius) - 2px), #bcd3ff var(--circle-radius), transparent calc(var(--circle-radius) + 2px)),
+    radial-gradient(circle at 50% 100%, transparent calc(var(--circle-radius) - 2px), #bcd3ff var(--circle-radius), transparent calc(var(--circle-radius) + 2px)),
+    radial-gradient(circle at 0% 50%, transparent calc(var(--circle-radius) - 2px), #bcd3ff var(--circle-radius), transparent calc(var(--circle-radius) + 2px)),
+    radial-gradient(circle at 100% 50%, transparent calc(var(--circle-radius) - 2px), #bcd3ff var(--circle-radius), transparent calc(var(--circle-radius) + 2px));
+  background-size: var(--pattern-size) var(--pattern-size);
+  background-repeat: repeat;
+}
+
+.hero {
+  padding: 60px 0 0 118px;
+  max-width: 800px;
+}
+
+.hero-title-container {
+  position: relative;
+  margin-bottom: 40px;
+}
+
+.hero-title {
+  font-family: 'Nunito';
+  font-weight: 700;
+  font-size: 56px;
+  line-height: 72px;
+  text-transform: uppercase;
+  color: #151515;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.orange-diamond {
+  position: absolute;
+  width: 48px;
+  height: 48px;
+  background: #FF9257;
+  border-radius: 50%;
+  top: 36px;
+  right: -4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.diamond-shape {
+  width: 12px;
+  height: 12px;
+  background: #FFFFFF;
+  transform: rotate(45deg);
+  border-radius: 2px;
+}
+
+.hero-description {
+  margin-bottom: 50px;
+  max-width: 608px;
+}
+
+.desc-line-1,
+.desc-line-2,
+.desc-line-3 {
+  font-family: 'Nunito';
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 21px;
+  color: #2D3134;
+  margin-bottom: 10px;
+}
+
+.desc-line-3 {
+  margin-bottom: 0;
+}
+
+.student-section {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  margin-bottom: 50px;
+}
+
+.student-avatars {
+  display: flex;
+  gap: -20px;
+  order: 2;
+}
+
+.avatar {
+  width: 85px;
+  height: 85px;
+  background: #C4C4C4;
+  border: 4px solid #FFFFFF;
+  border-radius: 50%;
+  position: relative;
+  z-index: 1;
+}
+
+.avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  display: block;
+}
+
+.av2 {
+  margin-left: -20px;
+  z-index: 2;
+}
+
+.av3 {
+  margin-left: -20px;
+  z-index: 3;
+}
+
+.student-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 6px;
+  order: 1;
+}
+
+.student-count {
+  font-family: 'Nunito';
+  font-weight: 400;
+  font-size: 34px;
+  line-height: 46px;
+  color: #000000;
+}
+
+.student-text {
+  font-family: 'Nunito';
+  font-weight: 400;
+  color: #000000;
+  opacity: 0.78;
+  display: block;
+}
+
+.students-text {
+  font-size: 14px;
+  line-height: 18px;
+  display: block;
+}
+
+.over-world-text {
+  font-size: 14px;
+  line-height: 18px;
+  opacity: 0.9;
+  display: block;
+}
+
+.buttons {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  margin-bottom: 100px;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  font-family: 'Nunito';
+  font-weight: 600;
+  font-size: 22px;
+  line-height: 30px;
+  border-radius: 60px;
+  padding: 22px 50px;
+  transition: transform 0.3s ease;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+}
+
+.primary-btn {
+  background: #2F584E;
+  color: #FFFFFF;
+}
+
+.secondary-cta {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.resume-btn {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: #FF9257;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  transition: transform 0.3s ease;
+  flex-shrink: 0;
+}
+
+.resume-btn:hover {
+  transform: translateY(-2px);
+}
+
+.white-triangle {
+  width: 0;
+  height: 0;
+  border-left: 12px solid #FFFFFF;
+  border-top: 8px solid transparent;
+  border-bottom: 8px solid transparent;
+  margin-left: 2px;
+}
+
+.journey-btn {
+  background: transparent;
+  color: #000000;
+  border: none;
+  padding: 22px 28px;
+  font-family: 'Nunito';
+  font-weight: 600;
+  font-size: 22px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.journey-btn:hover {
+  color: #FF9257;
+}
+
+.bottom-stats-bg {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 191px;
+  background: #FF9257;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.bottom-stats {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 1100px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0;
+  padding: 48px 40px 40px 40px;
+}
+
+.stat {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 20px;
+  flex: 1;
+  min-width: 0;
+  height: 105px;
+  padding-top: 18px;
+}
+
+.stat-highlight {
+  width: 4px;
+  height: 60px;
+  background: #F7BE2C;
+  margin-right: 20px;
+  flex-shrink: 0;
+  margin-top: 12px;
+}
+
+.stat-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  height: 100%;
+  padding-top: 8px;
+}
+
+.stat-number {
+  font-family: 'Nunito';
+  font-weight: 600;
+  font-size: 48px;
+  line-height: 1;
+  color: #FFFFFF;
+  margin-bottom: 4px;
+}
+
+.stat-label {
+  font-family: 'ABeeZee', sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 1;
+  color: #FFFFFF;
+}
+
+/* UPDATED: Image grid to show 2nd image from top to bottom */
+.image-grid {
+  position: absolute;
+  top: 0; /* Changed from 50% */
+  left: 50%;
+  transform: translateX(-50%); /* Changed from translate(-50%, -50%) */
+  width: 80%;
+  height: 100%; /* Changed from 80% */
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  gap: 40px;
+  padding: 40px 0; /* Added padding to ensure images don't touch edges */
+}
+
+.img-box {
+  border-radius: 16px;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  background: #D9D9D9;
+}
+
+.img-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.img-box:hover img {
+  transform: scale(1.05);
+}
+
+.img1 {
+  border-radius: 50%;
+}
+
+.img2 {
+  border-radius: 16px;
+}
+
+.img3 {
+  border-radius: 50px 0px 0px 50px;
+  background: #D9D9D9;
+}
+
+.img3 img {
+  background: #D9D9D9;
+}
+
+.img4 {
+  border-radius: 16px 240px 16px 16px;
+}
+
+.img5 {
+  border-radius: 50%;
+}
+
+.img6 {
+  border-radius: 16px;
+}
+
+@media (min-width: 1921px) {
+  .bottom-stats {
+    padding: 48px 40px 40px 40px;
+  }
+  
+  .stat {
+    padding-top: 18px;
+  }
+  
+  .stat-highlight {
+    margin-top: 12px;
+  }
+  
+  .stat-content {
+    padding-top: 8px;
+  }
+  
+  .img3 {
+    border-radius: 700px 100px 100px 700px;
+  }
+}
+
+@media (max-width: 1920px) {
+  .right-images {
+    --pattern-size: 120px;
+  }
+  
+  .image-grid {
+    gap: 40px;
+    padding: 40px 0;
+  }
+  
+  .bottom-stats {
+    max-width: 1000px;
+    padding: 48px 50px 40px 50px;
+  }
+  
+  .img3 {
+    border-radius: 700px 100px 100px 700px;
+  }
+  
+  .logo-icon {
+    width: 48px;
+    height: 48px;
+  }
+  
+  .logo-icon::before {
+    top: -6px;
+    width: 10px;
+    height: 10px;
+  }
+  
+  .logo-icon .book {
+    width: 40px;
+    height: 26px;
+  }
+  
+  .logo-icon .star {
+    font-size: 14px;
+  }
+  
+  .buttons {
+    gap: 30px;
+  }
+}
+
+@media (max-width: 1600px) {
+  .header {
+    padding: 32px 60px;
+    gap: 80px;
+  }
+  
+  .left-content {
+    padding-top: 124px;
+  }
+  
+  .hero {
+    padding-left: 60px;
+  }
+  
+  .hero-title {
+    font-size: 48px;
+    line-height: 62px;
+  }
+  
+  .orange-diamond {
+    right: -15px;
+    top: 22px;
+  }
+  
+  .hero-description {
+    margin-bottom: 45px;
+  }
+  
+  .desc-line-1,
+  .desc-line-2,
+  .desc-line-3 {
+    font-size: 14.5px;
+    line-height: 20px;
+  }
+  
+  .img3 {
+    border-radius: 700px 100px 100px 700px;
+  }
+  
+  .student-section {
+    gap: 30px;
+  }
+  
+  .student-count {
+    font-size: 30px;
+    line-height: 40px;
+  }
+  
+  .students-text {
+    font-size: 18px;
+    line-height: 24px;
+  }
+  
+  .over-world-text {
+    font-size: 16px;
+    line-height: 20px;
+  }
+  
+  .buttons {
+    gap: 30px;
+  }
+  
+  .btn {
+    font-size: 20px;
+    padding: 20px 45px;
+  }
+  
+  .journey-btn {
+    font-size: 20px;
+    padding: 20px 26px;
+  }
+  
+  .resume-btn {
+    width: 55px;
+    height: 55px;
+  }
+  
+  .white-triangle {
+    border-left: 10px solid #FFFFFF;
+    border-top: 7px solid transparent;
+    border-bottom: 7px solid transparent;
+  }
+  
+  .stat-number {
+    font-size: 42px;
+  }
+  
+  .stat-label {
+    font-size: 18px;
+  }
+  
+  .bottom-stats {
+    padding: 42px 40px 35px 40px;
+    margin-top: 0;
+    max-width: 900px;
+  }
+  
+  .stat {
+    padding-top: 14px;
+  }
+  
+  .stat-highlight {
+    margin-top: 10px;
+  }
+  
+  .stat-content {
+    padding-top: 6px;
+  }
+  
+  .logo-icon {
+    width: 42px;
+    height: 42px;
+  }
+  
+  .logo-icon::before {
+    top: -4px;
+    width: 8px;
+    height: 8px;
+  }
+  
+  .logo-icon .book {
+    width: 34px;
+    height: 22px;
+  }
+  
+  .logo-icon .book::before {
+    left: -3px;
+  }
+  
+  .logo-icon .book::after {
+    right: -3px;
+  }
+  
+  .logo-icon .star {
+    font-size: 12px;
+  }
+  
+  .right-images {
+    --pattern-size: 110px;
+    --circle-radius: 55px;
+  }
+  
+  .image-grid {
+    gap: 35px;
+    padding: 35px 0;
+  }
+}
+
+@media (max-width: 1440px) {
+  .right-images {
+    --pattern-size: 100px;
+  }
+  
+  .image-grid {
+    gap: 30px;
+    padding: 30px 0;
+  }
+  
+  .img3 {
+    border-radius: 700px 100px 100px 700px;
+  }
+  
+  .orange-diamond {
+    right: -6px;
+  }
+  
+  .bottom-stats {
+    max-width: 800px;
+    padding: 38px 40px 32px 40px;
+  }
+  
+  .buttons {
+    gap: 30px;
+  }
+  
+  .journey-btn {
+    padding: 20px 24px;
+  }
+  
+  .stat {
+    padding-top: 10px;
+  }
+  
+  .stat-highlight {
+    margin-top: 8px;
+  }
+  
+  .stat-content {
+    padding-top: 4px;
+  }
+}
+
+@media (max-width: 1400px) {
+  .bottom-stats {
+    padding: 34px 40px 30px 40px;
+  }
+  
+  .stat {
+    align-items: center;
+    padding-top: 8px;
+  }
+  
+  .stat-highlight {
+    margin-top: 6px;
+  }
+  
+  .stat-content {
+    justify-content: center;
+    padding-top: 2px;
+  }
+}
+
+@media (max-width: 1366px) {
+  .right-images {
+    --pattern-size: 95px;
+  }
+  
+  .orange-diamond {
+    right: -10px;
+  }
+  
+  .img3 {
+    border-radius: 700px 100px 100px 700px;
+  }
+  
+  .buttons {
+    gap: 30px;
+  }
+  
+  .image-grid {
+    padding: 30px 0;
+  }
+}
+
+@media (max-width: 1200px) {
+  .header {
+    padding: 24px 40px;
+    gap: 60px;
+  }
+  
+  .left-content {
+    padding-top: 88px;
+  }
+  
+  .nav {
+    gap: 40px;
+  }
+  
+  .hero {
+    padding-left: 40px;
+  }
+  
+  .hero-title {
+    font-size: 40px;
+    line-height: 52px;
+  }
+  
+  .orange-diamond {
+    width: 36px;
+    height: 36px;
+    right: -4px;
+    top: 18px;
+  }
+  
+  .diamond-shape {
+    width: 10px;
+    height: 10px;
+  }
+  
+  .hero-description {
+    margin-bottom: 40px;
+  }
+  
+  .desc-line-1,
+  .desc-line-2,
+  .desc-line-3 {
+    font-size: 14px;
+    line-height: 19px;
+    margin-bottom: 8px;
+  }
+  
+  .img3 {
+    border-radius: 700px 100px 100px 700px;
+  }
+  
+  .student-section {
+    gap: 25px;
+  }
+  
+  .avatar {
+    width: 75px;
+    height: 75px;
+  }
+  
+  .student-count {
+    font-size: 28px;
+    line-height: 36px;
+  }
+  
+  .students-text {
+    font-size: 16px;
+    line-height: 20px;
+  }
+  
+  .over-world-text {
+    font-size: 14px;
+    line-height: 18px;
+  }
+  
+  .buttons {
+    gap: 30px;
+  }
+  
+  .btn {
+    font-size: 18px;
+    padding: 18px 40px;
+  }
+  
+  .journey-btn {
+    font-size: 18px;
+    padding: 18px 26px;
+  }
+  
+  .resume-btn {
+    width: 50px;
+    height: 50px;
+  }
+  
+  .white-triangle {
+    border-left: 8px solid #FFFFFF;
+    border-top: 6px solid transparent;
+    border-bottom: 6px solid transparent;
+  }
+  
+  .stat-number {
+    font-size: 38px;
+  }
+  
+  .stat-label {
+    font-size: 16px;
+  }
+  
+  .bottom-stats {
+    padding: 0 30px;
+    max-width: 700px;
+  }
+  
+  .stat {
+    align-items: center;
+    padding-top: 0;
+  }
+  
+  .stat-highlight {
+    margin-top: 0;
+    margin-right: 20px;
+  }
+  
+  .stat-content {
+    justify-content: center;
+    padding-top: 0;
+  }
+  
+  .logo-icon {
+    width: 38px;
+    height: 38px;
+  }
+  
+  .logo-icon::before {
+    top: -3px;
+    width: 7px;
+    height: 7px;
+  }
+  
+  .logo-icon .book {
+    width: 30px;
+    height: 20px;
+  }
+  
+  .logo-icon .book::before {
+    left: -2.5px;
+  }
+  
+  .logo-icon .book::after {
+    right: -2.5px;
+  }
+  
+  .logo-icon .star {
+    font-size: 11px;
+  }
+  
+  .logo-text {
+    font-size: 22px;
+    line-height: 28px;
+  }
+  
+  .right-images {
+    --pattern-size: 90px;
+    --circle-radius: 45px;
+  }
+  
+  .image-grid {
+    gap: 25px;
+    padding: 25px 0;
+  }
+}
+
+@media (max-width: 1024px) {
+  .right-images {
+    --pattern-size: 85px;
+  }
+  
+  .image-grid {
+    gap: 22px;
+    padding: 22px 0;
+  }
+  
+  .img3 {
+    border-radius: 700px 100px 100px 700px;
+  }
+  
+  .orange-diamond {
+    right: -20px;
+  }
+  
+  .bottom-stats {
+    max-width: 600px;
+  }
+  
+  .buttons {
+    gap: 30px;
+  }
+  
+  .journey-btn {
+    padding: 18px 24px;
+  }
+}
+
+@media (max-width: 992px) {
+  .main-layout {
+    flex-direction: column;
+  }
+  
+  .header {
+    position: relative;
+  }
+  
+  .left-content {
+    width: 100%;
+    padding-top: 0;
+  }
+  
+  .right-images {
+    width: 100%;
+    min-height: 600px;
+    order: -1;
+    --pattern-size: 75px;
+    --circle-radius: 37.5px;
+  }
+  
+  .hero {
+    padding: 40px;
+    max-width: 100%;
+  }
+  
+  .hero-description {
+    margin-bottom: 35px;
+  }
+  
+  .desc-line-1,
+  .desc-line-2,
+  .desc-line-3 {
+    font-size: 13.5px;
+    line-height: 18px;
+    margin-bottom: 6px;
+  }
+  
+  .img3 {
+    border-radius: 700px 100px 100px 700px;
+  }
+  
+  .bottom-stats-bg {
+    height: 160px;
+    justify-content: center;
+  }
+  
+  .bottom-stats {
+    padding: 0 20px;
+    max-width: 100%;
+    justify-content: space-around;
+    gap: 20px;
+  }
+  
+  .stat {
+    height: 90px;
+  }
+  
+  .stat-highlight {
+    margin-right: 15px;
+  }
+  
+  .stat-number {
+    font-size: 32px;
+  }
+  
+  .stat-label {
+    font-size: 14px;
+  }
+  
+  .nav {
+    display: none;
+  }
+  
+  .image-grid {
+    position: relative;
+    top: 0;
+    left: 0;
+    transform: none;
+    width: 90%;
+    height: 90%;
+    margin: 0 auto;
+    padding: 40px 0; /* Updated */
+    gap: 20px;
+  }
+  
+  .orange-diamond {
+    right: -8px;
+    top: 15px;
+  }
+  
+  .student-section {
+    justify-content: flex-start;
+  }
+  
+  .buttons {
+    gap: 25px;
+  }
+}
+
+@media (max-width: 768px) {
+  .header {
+    padding: 20px;
+    gap: 40px;
+  }
+  
+  .logo-icon {
+    width: 36px;
+    height: 36px;
+  }
+  
+  .logo-icon::before {
+    top: -3px;
+    width: 6px;
+    height: 6px;
+  }
+  
+  .logo-icon .book {
+    width: 28px;
+    height: 18px;
+  }
+  
+  .logo-icon .book::before {
+    left: -2px;
+  }
+  
+  .logo-icon .book::after {
+    right: -2px;
+  }
+  
+  .logo-icon .star {
+    font-size: 10px;
+  }
+  
+  .logo-text {
+    font-size: 20px;
+    line-height: 24px;
+  }
+  
+  .hero {
+    padding: 30px 20px;
+  }
+  
+  .hero-title {
+    font-size: 32px;
+    line-height: 42px;
+  }
+  
+  .orange-diamond {
+    width: 36px;
+    height: 36px;
+    right: -6px;
+    top: 12px;
+  }
+  
+  .diamond-shape {
+    width: 8px;
+    height: 8px;
+  }
+  
+  .hero-description {
+    margin-bottom: 30px;
+  }
+  
+  .desc-line-1,
+  .desc-line-2,
+  .desc-line-3 {
+    font-size: 13px;
+    line-height: 17px;
+    margin-bottom: 5px;
+  }
+  
+  .img3 {
+    border-radius: 700px 100px 100px 700px;
+  }
+  
+  .student-section {
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+  }
+  
+  .student-avatars {
+    gap: -15px;
+  }
+  
+  .avatar {
+    width: 65px;
+    height: 65px;
+  }
+  
+  .student-count {
+    font-size: 26px;
+    line-height: 34px;
+  }
+  
+  .students-text {
+    font-size: 14px;
+    line-height: 18px;
+  }
+  
+  .over-world-text {
+    font-size: 12px;
+    line-height: 16px;
+  }
+  
+  .buttons {
+    margin-bottom: 60px;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 25px;
+  }
+  
+  .btn {
+    font-size: 18px;
+    padding: 16px 30px;
+    width: auto;
+    max-width: 300px;
+  }
+  
+  .journey-btn {
+    font-size: 18px;
+    padding: 16px 26px;
+  }
+  
+  .resume-btn {
+    width: 45px;
+    height: 45px;
+  }
+  
+  .white-triangle {
+    border-left: 7px solid #FFFFFF;
+    border-top: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+  }
+  
+  .bottom-stats-bg {
+    height: 140px;
+  }
+  
+  .bottom-stats {
+    flex-direction: column;
+    gap: 15px;
+    padding: 15px 20px;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .stat {
+    width: 100%;
+    justify-content: center;
+    height: auto;
+    margin-bottom: 10px;
+    padding-top: 0;
+  }
+  
+  .stat-highlight {
+    height: 40px;
+    margin-right: 15px;
+    width: 4px;
+    margin-top: 0;
+  }
+  
+  .stat-content {
+    align-items: flex-start;
+    padding-top: 0;
+  }
+  
+  .right-images {
+    min-height: 500px;
+    --pattern-size: 70px;
+    --circle-radius: 35px;
+  }
+  
+  .image-grid {
+    gap: 18px;
+    padding: 20px 0 40px 0;
+  }
+}
+
+@media (max-width: 576px) {
+  .right-images {
+    --pattern-size: 65px;
+    --circle-radius: 32.5px;
+  }
+  
+  .image-grid {
+    gap: 16px;
+    padding: 16px 0 32px 0;
+  }
+  
+  .img3 {
+    border-radius: 700px 100px 100px 700px;
+  }
+  
+  .orange-diamond {
+    right: -5px;
+    top: 10px;
+  }
+  
+  .hero-description {
+    margin-bottom: 25px;
+  }
+  
+  .desc-line-1,
+  .desc-line-2,
+  .desc-line-3 {
+    font-size: 12px;
+    line-height: 16px;
+    margin-bottom: 4px;
+  }
+  
+  .student-section {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .student-info {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .buttons {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+  
+  .primary-btn {
+    width: 100%;
+    max-width: 280px;
+  }
+  
+  .secondary-cta {
+    justify-content: center;
+  }
+  
+  .journey-btn {
+    width: auto;
+  }
+  
+  .bottom-stats {
+    gap: 20px;
+  }
+  
+  .stat {
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .header {
+    gap: 20px;
+  }
+  
+  .logo-icon {
+    width: 32px;
+    height: 32px;
+  }
+  
+  .logo-icon::before {
+    top: -2px;
+    width: 5px;
+    height: 5px;
+  }
+  
+  .logo-icon .book {
+    width: 24px;
+    height: 16px;
+    border-radius: 3px;
+  }
+  
+  .logo-icon .book::before {
+    left: -2px;
+    border-radius: 3px 0 0 3px;
+  }
+  
+  .logo-icon .book::after {
+    right: -2px;
+    border-radius: 0 3px 3px 0;
+  }
+  
+  .logo-icon .star {
+    font-size: 9px;
+  }
+  
+  .logo-text {
+    font-size: 18px;
+    line-height: 22px;
+  }
+  
+  .hero-title {
+    font-size: 28px;
+    line-height: 36px;
+  }
+  
+  .orange-diamond {
+    width: 32px;
+    height: 32px;
+    right: 0px;
+    top: 8px;
+  }
+  
+  .diamond-shape {
+    width: 7px;
+    height: 7px;
+  }
+  
+  .hero-description {
+    margin-bottom: 20px;
+  }
+  
+  .desc-line-1,
+  .desc-line-2,
+  .desc-line-3 {
+    font-size: 11.5px;
+    line-height: 15px;
+    margin-bottom: 3px;
+  }
+  
+  .img3 {
+    border-radius: 700px 100px 100px 700px;
+  }
+  
+  .avatar {
+    width: 55px;
+    height: 55px;
+  }
+  
+  .student-count {
+    font-size: 24px;
+    line-height: 32px;
+  }
+  
+  .students-text {
+    font-size: 13px;
+    line-height: 16px;
+  }
+  
+  .over-world-text {
+    font-size: 11px;
+    line-height: 14px;
+  }
+  
+  .btn {
+    font-size: 16px;
+    padding: 14px 24px;
+  }
+  
+  .journey-btn {
+    font-size: 16px;
+    padding: 14px 20px;
+  }
+  
+  .resume-btn {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .white-triangle {
+    border-left: 6px solid #FFFFFF;
+    border-top: 4px solid transparent;
+    border-bottom: 4px solid transparent;
+  }
+  
+  .stat-number {
+    font-size: 28px;
+  }
+  
+  .stat-label {
+    font-size: 13px;
+  }
+  
+  .stat-highlight {
+    height: 35px;
+    margin-right: 10px;
+  }
+  
+  .right-images {
+    min-height: 400px;
+    --pattern-size: 60px;
+    --circle-radius: 30px;
+  }
+  
+  .image-grid {
+    padding: 15px 0 30px 0;
+    gap: 15px;
+  }
+  
+  .buttons {
+    gap: 20px;
+  }
+}
+
+@media (max-width: 375px) {
+  .right-images {
+    --pattern-size: 55px;
+    --circle-radius: 27.5px;
+  }
+  
+  .image-grid {
+    gap: 12px;
+    padding: 12px 0 24px 0;
+  }
+  
+  .img3 {
+    border-radius: 700px 100px 100px 700px;
+  }
+  
+  .orange-diamond {
+    right: 5px;
+    top: 5px;
+  }
+  
+  .desc-line-1,
+  .desc-line-2,
+  .desc-line-3 {
+    font-size: 11px;
+    line-height: 14px;
+  }
+  
+  .stat-highlight {
+    height: 30px;
+    margin-right: 8px;
+  }
+  
+  .journey-btn {
+    padding: 14px 18px;
+  }
+  
+  .logo-icon {
+    width: 30px;
+    height: 30px;
+  }
+  
+  .logo-icon::before {
+    top: -2px;
+    width: 4px;
+    height: 4px;
+  }
+  
+  .logo-icon .book {
+    width: 22px;
+    height: 14px;
+  }
+  
+  .logo-icon .star {
+    font-size: 8px;
+  }
+  
+  .buttons {
+    gap: 15px;
+  }
+}
+
+.hero-title-container .orange-diamond {
+  right: -4px !important;
+  top: 36px !important;
+}
+
+@media (max-width: 992px) {
+  .hero-title-container .orange-diamond {
+    right: -6px !important;
+    top: 22px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-title-container .orange-diamond {
+    right: -4px !important;
+    top: 12px !important;
+  }
+}
